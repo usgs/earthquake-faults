@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd `dirname $0` 2>&1 > /dev/null;
+
+source '../conf/config.ini';
+
+cat <<- EO_INSTALLER > ../conf/httpd.conf
+##----------------------------------------------------------------------
+## Application Name: Quaternary and Hazard Faults Web Applications
+## Description:
+##
+##----------------------------------------------------------------------
+
+Alias $MOUNT_PATH `dirname $0`/../htdocs
+
+EO_INSTALLER
