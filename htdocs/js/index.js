@@ -1,8 +1,8 @@
 var ARC = 'http://server.arcgisonline.com/ArcGIS/rest/services',
     GEO = 'http://geohazards.usgs.gov/ArcGIS/rest/services',
     TERRAIN_LAYER = ARC + '/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}.jpg',
-    FAULT_LAYER = GEO + '/qfaults2013/MapServer/tile/{z}/{y}/{x}.png',
-    PALEO_LAYER = GEO + '/paleosites2013/MapServer/tile/{z}/{y}/{x}.png',
+    FAULT_LAYER = GEO + '/qfaults2013/MapServer/tile/{z}/{y}/{x}',
+    PALEO_LAYER = GEO + '/paleosites2013/MapServer/tile/{z}/{y}/{x}',
     FAULT_INFO_LAYER = GEO + '/qfaults2013/MapServer/identify',
     PALEO_INFO_LAYER = GEO + '/paleosites2013/MapServer/identify';
 
@@ -69,7 +69,7 @@ var PALEO_MARKUP_FOOTER = [
 	(new L.TileLayer(FAULT_LAYER)).addTo(map);
 	
 	// Create Paleo layers
-	var paleoLayer = new L.TileLayer(FAULT_LAYER);
+	var paleoLayer = new L.TileLayer(PALEO_LAYER);
 	var paleoInfoLayer = new L.ArcIdentify(PALEO_INFO_LAYER);
 
 	if (map.getZoom() >= 6) {

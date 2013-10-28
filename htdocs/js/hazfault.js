@@ -1,7 +1,7 @@
 var ARC = 'http://server.arcgisonline.com/ArcGIS/rest/services',
     GEO = 'http://geohazards.usgs.gov/ArcGIS/rest/services',
     TERRAIN_LAYER = ARC + '/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}.jpg',
-    FAULT_LAYER = GEO + '/hazfaults/MapServer/tile/{z}/{y}/{x}.png',
+    FAULT_LAYER = GEO + '/hazfaults/MapServer/tile/{z}/{y}/{x}',
     FAULT_INFO_LAYER = GEO + '/hazfaults/MapServer/identify';
 
 var FAULT_MARKUP_HEADER = [
