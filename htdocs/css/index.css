@@ -20,7 +20,7 @@ html, body, #mapdiv {
 .legend > h2 {
 	margin:0;
 	padding:2px 0 0 5px;
-	font-size:1em;
+	font-size:.8em;
 	background-color:#FFF;
 	font-family:Arial;
 	border-radius:4px 4px 0 0;
