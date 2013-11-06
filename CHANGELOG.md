@@ -1,4 +1,4 @@
-v0.0.2 - Visual Aestetics (2013-11-6)
+v0.0.2 - Visual Aesthetics (2013-11-6)
 =====================================
  * Restricted max zoom level for map to L11.
  * Remove link to more information when that information does not exist.
