@@ -60,6 +60,26 @@ var FAULT_MARKUP_FOOTER = [
 	});
 
 	function _getFaultResultMarkup (info) {
+		if (info.CFM_URL === null || info.CFM_URL === '' ||
+				info.cooperator === 'Alaska Geological Survey') {
+			// No link
+
+			if (!info.NAME) {
+				info.NAME = '<span class="unknown">unspecified</span>';
+			}
+
+		} else {
+			// Include link
+
+			if (!info.NAME) {
+				info.NAME = '<a class="unknown" href="' + info.CFM_URL + '">' +
+						'unspecified</a>';
+			} else {
+				info.NAME = '<a href="' + info.CFM_URL + '">' + info.NAME + '</a>';
+			}
+
+		}
+
 		var slip_sense_map = {
 			'1': 'Strike Slip',
 			'2': 'Thrust (Reverse)',
@@ -67,9 +87,6 @@ var FAULT_MARKUP_FOOTER = [
 			'-1': '<span class="unknown">unspecified</span>'
 		};
 
-		info.CFM_URL = info.CFM_URL || '#';
-		info.NAME = info.NAME ||
-				'<span class="unknown">unspecified</span>';
 		info.PREF_DIP = info.PREF_DIP || 
 				'<span class="unknown">unspecified</span>';
 		info.DIP_DIR = info.DIP_DIR || '';
@@ -82,8 +99,7 @@ var FAULT_MARKUP_FOOTER = [
 				'<dl class="fault-info">',
 
 					'<dt class="clear fault-name-label">Name</td>',
-					'<dd class="fault-name-data"><a href="', info.CFM_URL, '">',
-							info.NAME, '</a></dd>',
+					'<dd class="fault-name-data">', info.NAME, '</dd>',
 
 					'<dt class="clear">Dip (degrees)</dt>',
 					'<dd>', info.PREF_DIP + info.DIP_DIR, '</dd>',

@@ -152,7 +152,27 @@ var PALEO_MARKUP_FOOTER = [
 	};
 
 	function _getAreaResultMarkup (info) {
-		info.CFM_URL = info.CFM_URL || '#';
+		if (info.CFM_URL === null || info.CFM_URL === '' ||
+				info.cooperator === 'Alaska Geological Survey') {
+			// No link
+
+			if (!info.NAME) {
+				info.NAME = '<span class="unknown">unspecified</span>';
+			}
+
+		} else {
+			// Include link
+
+			if (!info.NAME) {
+				info.NAME = '<a class="unknown" href="' + info.CFM_URL + '">' +
+						'unspecified</a>';
+			} else {
+				info.NAME = '<a href="' + info.CFM_URL + '">' + info.NAME + '</a>';
+			}
+
+		}
+
+		info.CFM_URL = info.CFM_URL || null;
 		info.NAME = info.NAME ||
 				'<span class="unknown">unspecified</span>';
 		info.AGE = info.AGE ||
@@ -164,9 +184,7 @@ var PALEO_MARKUP_FOOTER = [
 
 		return [
 			'<tr>',
-				'<td class="fault-name">',
-					'<a href="' + info.CFM_URL + '">' + info.NAME + '</a>',
-				'</td>',
+				'<td class="fault-name">', info.NAME, '</td>',
 				'<td class="fault-age">', info.AGE, '</td>',
 				'<td class="fault-rate">', info.SLIPRATE, '</td>',
 				'<td class="fault-sense">', info.SLIPSENSE, '</td>',
@@ -175,9 +193,26 @@ var PALEO_MARKUP_FOOTER = [
 	};
 
 	function _getFaultResultMarkup (info) {
-		info.CFM_URL = info.CFM_URL || '#';
-		info.name = info.name ||
-				'<span class="unknown">unspecified</span>';
+		if (info.CFM_URL === null || info.CFM_URL === '' ||
+				info.cooperator === 'Alaska Geological Survey') {
+			// No link
+
+			if (!info.name) {
+				info.name = '<span class="unknown">unspecified</span>';
+			}
+
+		} else {
+			// Include link
+
+			if (!info.name) {
+				info.name = '<a class="unknown" href="' + info.CFM_URL + '">' +
+						'unspecified</a>';
+			} else {
+				info.name = '<a href="' + info.CFM_URL + '">' + info.name + '</a>';
+			}
+
+		}
+
 		info.cooperator = info.cooperator ||
 				'<span class="unknown">unspecified</span>';
 		info.age = info.age ||
@@ -197,9 +232,8 @@ var PALEO_MARKUP_FOOTER = [
 			'<li class="fault-wrapper">',
 				'<dl class="fault-info">',
 
-					'<dt class="clear fault-name-label">Name</td>',
-					'<dd class="fault-name-data"><a href="', info.CFM_URL, '">',
-							info.name, '</a></dd>',
+					'<dt class="clear fault-name-label">Name</dt>',
+					'<dd class="fault-name-data">', info.name, '</dd>',
 
 					'<dt class="clear fault-cooperator-label">Collaborator</dt>',
 					'<dd class="fault-cooperator-data">', info.cooperator, '</dd>',
