@@ -14,6 +14,7 @@ var FAULT_MARKUP_FOOTER = [
 
 (function () {
 	var map = new L.Map('mapdiv', {
+		maxZoom: 11,
 		center: [37.0, -96.0],
 		zoom: 5
 	});
