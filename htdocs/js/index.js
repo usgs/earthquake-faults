@@ -53,7 +53,8 @@ var PALEO_MARKUP_FOOTER = [
 		zoom: 5
 	});
 
-	map.fitBounds([[24.6,-125.0],[50.0,-65.0]]);
+	// Want AK and Conterminous US visible.
+	map.fitBounds([[24.6,-150.0],[70.0,-65.0]]);
 
 	var FAULT_MARKUP = [], AREA_MARKUP = [], PALEO_MARKUP = [],
 	    TAB_CONTROL = [], TAB_CONTENT = [];
