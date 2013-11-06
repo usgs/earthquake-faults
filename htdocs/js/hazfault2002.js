@@ -82,8 +82,7 @@ var FAULT_MARKUP_FOOTER = [
 				'<dl class="fault-info">',
 
 					'<dt class="clear fault-name-label">Name</td>',
-					'<dd class="fault-name-data"><a href="', info.CFM_URL, '">',
-							info.NAME, '</a></dd>',
+					'<dd class="fault-name-data">', info.NAME, '</dd>',
 
 					'<dt class="clear">Dip (degrees)</dt>',
 					'<dd>', info.PREF_DIP + info.DIP_DIR, '</dd>',
