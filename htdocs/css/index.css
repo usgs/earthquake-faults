@@ -30,6 +30,9 @@ html, body, #mapdiv {
 	display:block;
 	border-radius:0 0 4px 4px;
 }
+.legend > img.qfault {
+	border-radius:4px;
+}
 .logo {
 	display:block;
 	position:fixed;

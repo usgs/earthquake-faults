@@ -253,7 +253,9 @@ var PALEO_MARKUP_FOOTER = [
 					'<dt class="fault-direction-label">Direction</dt>',
 					'<dd class="fault-direction-data">', info.dipdirecti, '</dd>',
 					'<dt class="fault-length-label">Length (km)</dt>',
-					'<dd class="fault-length-data">', info.length, '</dd>',
+					'<dd class="fault-length-data">',
+						(Math.round(info.length*10)/10),
+					'</dd>',
 
 				'</dl>',
 			'</li>'

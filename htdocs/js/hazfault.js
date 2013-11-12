@@ -88,10 +88,10 @@ var FAULT_MARKUP_FOOTER = [
 			'-1': '<span class="unknown">unspecified</span>'
 		};
 
-		info.PREF_DIP = info.PREF_DIP || 
+		info.DISP_DIPS = info.DISP_DIPS || 
 				'<span class="unknown">unspecified</span>';
 		info.DIP_DIR = info.DIP_DIR || '';
-		info.PREF_SLIP_ = info.PREF_SLIP_ ||
+		info.DISP_SING = info.DISP_SING ||
 				'<span class="unknown">unspecified</span>';
 		info.SLIP_SENSE = info.SLIP_SENSE || '-1';
 
@@ -103,9 +103,9 @@ var FAULT_MARKUP_FOOTER = [
 					'<dd class="fault-name-data">', info.NAME, '</dd>',
 
 					'<dt class="clear">Dip (degrees)</dt>',
-					'<dd>', info.PREF_DIP + info.DIP_DIR, '</dd>',
+					'<dd>', info.DISP_DIPS + info.DIP_DIR, '</dd>',
 					'<dt>Pref Slip Rate (mm/yr)</dt>',
-					'<dd>', info.PREF_SLIP_, '</dd>',
+					'<dd>', info.DISP_SING, '</dd>',
 					'<dt>Slip Sense</dt>',
 					'<dd>', slip_sense_map[info.SLIP_SENSE], '</dd>',
 
