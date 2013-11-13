@@ -1,3 +1,9 @@
+v0.0.3 - Output Display (2013-11-13)
+====================================
+ * Corrected display output fields for hazfault.
+ * Removed legend header from qfault.
+ * Rounded fault length to nearest 0.1 kilometer.
+
 v0.0.2 - Visual Aesthetics (2013-11-6)
 =====================================
  * Restricted max zoom level for map to L11.
