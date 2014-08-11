@@ -1,0 +1,41 @@
+{
+  "name": "earthquake-faults",
+  "version": "0.0.1",
+  "description": "Earthquake Faults Web Application",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-connect": "~0.8.0",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "requirejs": "~2.1.12",
+    "leaflet": "~0.7.3",
+    "grunt-exec": "~0.4.6",
+    "grunt-contrib-copy": "~0.5.0",
+    "jshint": "~2.5.2",
+    "uglify-js": "~2.4.15"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usgs/earthquake-faults.git"
+  },
+  "keywords": [
+    "earthquake",
+    "hazard",
+    "fault",
+    "qfault",
+    "quaternary"
+  ],
+  "author": "Eric Martinez <emartinez@usgs.gov> (http://earthquake.usgs.gov/)",
+  "license": "Public Domain",
+  "bugs": {
+    "url": "https://github.com/usgs/earthquake-faults/issues"
+  },
+  "homepage": "https://github.com/usgs/earthquake-faults"
+}
