@@ -20,10 +20,10 @@ require([
 	var GEO = 'http://geohazards.usgs.gov/ArcGIS/rest/services';
 
 	new FaultMap({
-		faultLayerUrl: GEO + '/hazfaults2002/MapServer/tile/{z}/{y}/{x}',
+		faultLayerUrl: GEO + '/hazfaults/MapServer/tile/{z}/{y}/{x}',
 		faultLayerOpts: {
-			attribution: '<a href="http://pubs.er.usgs.gov/publication/ofr02420">USGS</a>'
+			attribution: '<a href="http://pubs.usgs.gov/of/2008/1128/">USGS</a>'
 		},
-		faultInfoUrl: GEO + '/hazfaults2002/MapServer/identify'
+		faultInfoUrl: GEO + '/hazfaults/MapServer/identify'
 	});
 });
