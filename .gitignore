@@ -1,2 +1,3 @@
 conf/httpd.conf
 conf/config.ini
+.DS_Store
