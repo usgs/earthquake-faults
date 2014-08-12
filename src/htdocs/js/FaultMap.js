@@ -208,10 +208,11 @@ define([
 			// Include link
 
 			if (!info.NAME) {
-				info.NAME = '<a class="unknown" href="' + info.CFM_URL + '">' +
-						'unspecified</a>';
+				info.NAME = '<a target="_blank" class="unknown" href="' +
+						info.CFM_URL + '">' + 'unspecified</a>';
 			} else {
-				info.NAME = '<a href="' + info.CFM_URL + '">' + info.NAME + '</a>';
+				info.NAME = '<a target="_blank" href="' + info.CFM_URL + '">' +
+						info.NAME + '</a>';
 			}
 
 		}
@@ -263,10 +264,11 @@ define([
 			// Include link
 
 			if (!info.NAME) {
-				info.NAME = '<a class="unknown" href="' + info.CFM_URL + '">' +
-						'unspecified</a>';
+				info.NAME = '<a target="_blank" class="unknown" href="' +
+						info.CFM_URL + '">' + 'unspecified</a>';
 			} else {
-				info.NAME = '<a href="' + info.CFM_URL + '">' + info.NAME + '</a>';
+				info.NAME = '<a target="_blank" href="' + info.CFM_URL + '">' +
+						info.NAME + '</a>';
 			}
 
 		}

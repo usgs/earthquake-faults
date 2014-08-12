@@ -24,10 +24,11 @@ define([
 			// Include link
 
 			if (!info.name) {
-				info.name = '<a class="unknown" href="' + info.CFM_URL + '">' +
-						'unspecified</a>';
+				info.name = '<a target="_blank" class="unknown" href="' +
+						info.CFM_URL + '">' + 'unspecified</a>';
 			} else {
-				info.name = '<a href="' + info.CFM_URL + '">' + info.name + '</a>';
+				info.name = '<a target="_blank" href="' + info.CFM_URL + '">' +
+						info.name + '</a>';
 			}
 
 		}
