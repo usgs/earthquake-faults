@@ -4,3 +4,4 @@ conf/config.ini
 .jshintrc
 .tmp
 node_modules
+dist
