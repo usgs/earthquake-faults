@@ -1,3 +1,9 @@
+v0.0.4 - New Edition (2014-08-12)
+=================================
+ * Abstracted source to use a FaultMap and QFaultMap JS class.
+ * Added support for 2014 hazard fault data services.
+ * Migrated project structure to support local development.
+
 v0.0.3 - Output Display (2013-11-13)
 ====================================
  * Corrected display output fields for hazfault.
