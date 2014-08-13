@@ -1,7 +1,6 @@
 conf/httpd.conf
 conf/config.ini
 .DS_Store
-.jshintrc
 .tmp
 node_modules
 dist
