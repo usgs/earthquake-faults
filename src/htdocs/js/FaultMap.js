@@ -53,6 +53,7 @@ define([
 	var DEFAULTS = {
 		baseLayerUrl: TERRAIN_LAYER,
 		baseLayerOpts: null,
+		initialExtent: [[24.6,-125.0],[50.0,-65.0]]
 
 		/** Other configuration options, but no defaults specified */
 		/*
@@ -92,10 +93,11 @@ define([
 		this._faultLayer = null;
 		this._paleoLayer = null;
 
-		this.initialize();
+		options.initialExtent = options.initialExtent || DEFAULTS.initialExtent;
+		this.initialize(options.initialExtent);
 	};
 
-	FaultMap.prototype.initialize = function () {
+	FaultMap.prototype.initialize = function (initialExtent) {
 
 		this._map = new L.Map('mapdiv', {
 			maxZoom: 11,
@@ -103,7 +105,7 @@ define([
 			zoom: 5
 		});
 
-		this._map.fitBounds([[24.6,-125.0],[50.0,-65.0]]);
+		this._map.fitBounds(initialExtent);
 
 		// Add a baselayer
 		this._baseLayer = new L.TileLayer(

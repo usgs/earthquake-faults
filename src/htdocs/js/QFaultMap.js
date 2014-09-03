@@ -6,7 +6,14 @@ define([
 ) {
 	'use strict';
 
+	var DEFAULTS = {
+		initialExtent: [[18.5,-162.0],[65.0,-69.0]]
+	};
+
 	var QFaultMap = function (options) {
+		options = options || {};
+		options.initialExtent = options.initialExtent || DEFAULTS.initialExtent;
+
 		FaultMap.call(this, options);
 	};
 	QFaultMap.prototype = Object.create(FaultMap.prototype);
