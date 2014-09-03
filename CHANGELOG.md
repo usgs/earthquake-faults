@@ -1,3 +1,8 @@
+v0.0.5 - Default Extent (2014-09-03)
+====================================
+ * Made initial extent a configurable option.
+ * Changed default initial extent for QFaultMap.
+
 v0.0.4 - New Edition (2014-08-12)
 =================================
  * Abstracted source to use a FaultMap and QFaultMap JS class.
