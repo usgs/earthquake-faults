@@ -19,7 +19,22 @@ module.exports = function (grunt) {
 			},
 			dev: {
 				options: {
-					base: ['src/htdocs', '.tmp', 'node_modules']
+					base: ['src/htdocs', '.tmp', 'node_modules'],
+					middleware: function (connect, options) {
+						var handlers = [
+							require('grunt-connect-proxy/lib/utils').proxyRequest
+						];
+
+						if (!require('util').isArray(options.base)) {
+							options.base = [options.base];
+						}
+
+						options.base.forEach(function (base) {
+							handlers.push(connect.static(base));
+						});
+
+						return handlers;
+					}
 				}
 			},
 			dist: {
@@ -27,7 +42,17 @@ module.exports = function (grunt) {
 					base: ['dist/htdocs', 'node_modules'],
 					keepalive: true
 				}
-			}
+			},
+			proxies: [
+				{
+					context: '/hazards',
+					host: 'earthquake.usgs.gov',
+					port: 80,
+					https: false,
+					changeOrigin: true,
+					xforward: false
+				}
+			]
 		},
 
 		copy: {
@@ -99,6 +124,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', [
 		'init',
+		'configureProxies',
 		'connect:dev',
 		'watch'
 	]);
