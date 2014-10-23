@@ -160,13 +160,11 @@ define([
 		this._map.on('zoomend', function (/*evt*/) {
 			if (this._map.getZoom() >= 8) {
 				if (this._paleoLayer && !this._paleoLayer.map) {
-					console.log('adding paleo');
 					this._paleoLayer.addTo(this._map);
 					this._paleoInfoLayer.addTo(this._map);
 				}
 			} else {
 				if (this._paleoLayer && this._paleoLayer.map) {
-					console.log('removing paleo');
 					this._paleoLayer.removeFrom(this._map);
 					this._paleoInfoLayer.removeFrom(this._map);
 				}
@@ -360,7 +358,7 @@ define([
 		if (defaultVisible === true) {
 			control.className = 'tabs-control tabs-control-selected';
 			content.className = 'tabs-content tabs-content-visible';
-		} else {	
+		} else {
 			control.className = 'tabs-control';
 			content.className = 'tabs-content';
 		}
