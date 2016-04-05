@@ -183,11 +183,11 @@ define([
 
 		for (i = 0; i < len; i++) {
 			result = results[i];
-			if (result.attributes.Shape === 'Polyline') {
+			if (result.attributes.shape === 'Polyline') {
 				this._faultMarkup.push(this._getFaultResultMarkup(result.attributes));
-			} else if (result.attributes.Shape === 'Polygon') {
+			} else if (result.attributes.shape === 'Polygon') {
 				this._areaMarkup.push(this._getAreaResultMarkup(result.attributes));
-			} else if (result.attributes.Shape === 'Point') {
+			} else if (result.attributes.shape === 'Point') {
 				this._paleoMarkup.push(this._getPaleoResultMarkup(result.attributes));
 			}
 		}
@@ -225,7 +225,7 @@ define([
 			'-1': '<span class="unknown">unspecified</span>'
 		};
 
-		info.DISP_DIPS = info.DISP_DIPS || 
+		info.DISP_DIPS = info.DISP_DIPS ||
 				'<span class="unknown">unspecified</span>';
 		info.DIP_DIR = info.DIP_DIR || '';
 		info.DISP_SING = info.DISP_SING ||
