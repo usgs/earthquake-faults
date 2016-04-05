@@ -17,13 +17,13 @@ require([
 ) {
 	'use strict';
 
-	var GEO = 'http://geohazards.usgs.gov/ArcGIS/rest/services';
+	var GEO = 'http://earthquake.usgs.gov/arcgis/rest/services';
 
 	new FaultMap({
-		faultLayerUrl: GEO + '/hazfaults/MapServer/tile/{z}/{y}/{x}',
+		faultLayerUrl: GEO + '/haz/hazfaults2008/MapServer/tile/{z}/{y}/{x}',
 		faultLayerOpts: {
 			attribution: '<a href="http://pubs.usgs.gov/of/2008/1128/">USGS</a>'
 		},
-		faultInfoUrl: GEO + '/hazfaults/MapServer/identify'
+		faultInfoUrl: GEO + '/haz/hazfaults2008/MapServer/identify'
 	});
 });
