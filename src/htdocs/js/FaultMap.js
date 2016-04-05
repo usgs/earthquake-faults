@@ -294,15 +294,15 @@ define([
 	};
 
 	FaultMap.prototype._getPaleoResultMarkup = function (info) {
-		info.NUM = info.NUM ||
+		info.num = info.num ||
 				'<span class="unknown">unspecified</span>';
-		info.TRENCHID = info.TRENCHID ||
+		info.trenchid = info.trenchid ||
 				'<span class="unknown">unspecified</span>';
 
 		return [
 			'<tr>',
-				'<td class="site-number">', info.NUM, '</td>',
-				'<td class="trench-id">', info.TRENCHID, '</td>',
+				'<td class="site-number">', info.num, '</td>',
+				'<td class="trench-id">', info.trenchid, '</td>',
 			'</tr>'
 		].join('');
 	};
