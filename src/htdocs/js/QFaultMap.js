@@ -19,7 +19,7 @@ define([
 	QFaultMap.prototype = Object.create(FaultMap.prototype);
 
 	QFaultMap.prototype._getFaultResultMarkup = function (info) {
-		if (info.CFM_URL === null || info.CFM_URL === '' ||
+		if (info.cfm_url === null || info.cfm_url === '' ||
 				info.cooperator === 'Alaska Geological Survey') {
 			// No link
 
@@ -32,9 +32,9 @@ define([
 
 			if (!info.name) {
 				info.name = '<a target="_blank" class="unknown" href="' +
-						info.CFM_URL + '">' + 'unspecified</a>';
+						info.cfm_url + '">' + 'unspecified</a>';
 			} else {
-				info.name = '<a target="_blank" href="' + info.CFM_URL + '">' +
+				info.name = '<a target="_blank" href="' + info.cfm_url + '">' +
 						info.name + '</a>';
 			}
 
