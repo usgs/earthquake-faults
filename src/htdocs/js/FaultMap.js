@@ -252,43 +252,43 @@ define([
 	};
 
 	FaultMap.prototype._getAreaResultMarkup = function (info) {
-		if (info.CFM_URL === null || info.CFM_URL === '' ||
+		if (info.cfm_url === null || info.cfm_url === '' ||
 				info.cooperator === 'Alaska Geological Survey') {
 			// No link
 
-			if (!info.NAME) {
-				info.NAME = '<span class="unknown">unspecified</span>';
+			if (!info.name) {
+				info.name = '<span class="unknown">unspecified</span>';
 			}
 
 		} else {
 			// Include link
 
-			if (!info.NAME) {
-				info.NAME = '<a target="_blank" class="unknown" href="' +
-						info.CFM_URL + '">' + 'unspecified</a>';
+			if (!info.name) {
+				info.name = '<a target="_blank" class="unknown" href="' +
+						info.cfm_url + '">' + 'unspecified</a>';
 			} else {
-				info.NAME = '<a target="_blank" href="' + info.CFM_URL + '">' +
-						info.NAME + '</a>';
+				info.name = '<a target="_blank" href="' + info.cfm_url + '">' +
+						info.name + '</a>';
 			}
 
 		}
 
-		info.CFM_URL = info.CFM_URL || null;
-		info.NAME = info.NAME ||
+		info.cfm_url = info.cfm_url || null;
+		info.name = info.name ||
 				'<span class="unknown">unspecified</span>';
-		info.AGE = info.AGE ||
+		info.age = info.age ||
 				'<span class="unknown">unspecified</span>';
 		info.SLIPRATE = info.SLIPRATE ||
 				'<span class="unknown">unspecified</span>';
-		info.SLIPSENSE = info.SLIPSENSE ||
+		info.slipsense = info.slipsense ||
 				'<span class="unknown">unspecified</span>';
 
 		return [
 			'<tr>',
-				'<td class="fault-name">', info.NAME, '</td>',
-				'<td class="fault-age">', info.AGE, '</td>',
+				'<td class="fault-name">', info.name, '</td>',
+				'<td class="fault-age">', info.age, '</td>',
 				'<td class="fault-rate">', info.SLIPRATE, '</td>',
-				'<td class="fault-sense">', info.SLIPSENSE, '</td>',
+				'<td class="fault-sense">', info.slipsense, '</td>',
 			'</tr>'
 		].join('');
 	};
