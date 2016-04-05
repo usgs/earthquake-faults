@@ -278,7 +278,7 @@ define([
 				'<span class="unknown">unspecified</span>';
 		info.age = info.age ||
 				'<span class="unknown">unspecified</span>';
-		info.SLIPRATE = info.SLIPRATE ||
+		info.rate = info.rate ||
 				'<span class="unknown">unspecified</span>';
 		info.slipsense = info.slipsense ||
 				'<span class="unknown">unspecified</span>';
@@ -287,7 +287,7 @@ define([
 			'<tr>',
 				'<td class="fault-name">', info.name, '</td>',
 				'<td class="fault-age">', info.age, '</td>',
-				'<td class="fault-rate">', info.SLIPRATE, '</td>',
+				'<td class="fault-rate">', info.rate, '</td>',
 				'<td class="fault-sense">', info.slipsense, '</td>',
 			'</tr>'
 		].join('');
