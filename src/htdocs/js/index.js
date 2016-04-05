@@ -17,16 +17,16 @@ require([
 ) {
 	'use strict';
 
-	var GEO = 'http://geohazards.usgs.gov/ArcGIS/rest/services';
+	var GEO = 'http://earthquake.usgs.gov/arcgis/rest/services';
 
 	new QFaultMap({
-		faultLayerUrl: GEO + '/qfaults2013/MapServer/tile/{z}/{y}/{x}',
+		faultLayerUrl: GEO + '/haz/qfaults/MapServer/tile/{z}/{y}/{x}',
 		faultLayerOpts: {
 			attribution: '<a href="/hazards/qfaults/">USGS</a>'
 		},
-		faultInfoUrl: GEO + '/qfaults2013/MapServer/identify',
+		faultInfoUrl: GEO + '/haz/qfaults/MapServer/identify',
 
-		paleoLayerUrl: GEO + '/paleosites2013/MapServer/tile/{z}/{y}/{x}',
-		paleoInfoUrl: GEO + '/paleosites2013/MapServer/identify'
+		paleoLayerUrl: GEO + '/haz/paleosites/MapServer/tile/{z}/{y}/{x}',
+		paleoInfoUrl: GEO + '/haz/paleosites/MapServer/identify'
 	});
 });
