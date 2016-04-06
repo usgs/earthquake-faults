@@ -7,12 +7,15 @@ define([
 	'use strict';
 
 	var DEFAULTS = {
-		initialExtent: [[18.5,-162.0],[65.0,-69.0]]
+		initialExtent: [[18.5,-162.0],[65.0,-69.0]],
+		maxZoom: 10
 	};
 
 	var QFaultMap = function (options) {
 		options = options || {};
+
 		options.initialExtent = options.initialExtent || DEFAULTS.initialExtent;
+		options.maxZoom = options.maxZoom || DEFAULTS.maxZoom;
 
 		FaultMap.call(this, options);
 	};

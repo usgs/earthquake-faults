@@ -53,7 +53,8 @@ define([
 	var DEFAULTS = {
 		baseLayerUrl: TERRAIN_LAYER,
 		baseLayerOpts: null,
-		initialExtent: [[24.6,-125.0],[50.0,-65.0]]
+		initialExtent: [[24.6,-125.0],[50.0,-65.0]],
+		maxZoom: 11
 
 		/** Other configuration options, but no defaults specified */
 		/*
@@ -94,13 +95,15 @@ define([
 		this._paleoLayer = null;
 
 		options.initialExtent = options.initialExtent || DEFAULTS.initialExtent;
-		this.initialize(options.initialExtent);
+		options.maxZoom = options.maxZoom || DEFAULTS.maxZoom;
+
+		this.initialize(options.initialExtent, options.maxZoom);
 	};
 
-	FaultMap.prototype.initialize = function (initialExtent) {
+	FaultMap.prototype.initialize = function (initialExtent, maxZoom) {
 
 		this._map = new L.Map('mapdiv', {
-			maxZoom: 11,
+			maxZoom: maxZoom,
 			center: [37.0, -96.0],
 			zoom: 5
 		});
