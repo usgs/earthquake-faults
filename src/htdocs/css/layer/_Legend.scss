@@ -1,0 +1,33 @@
+.legend {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px #333;
+  margin: 0;
+  padding: 4px 6px;
+  text-align: center;
+
+  > .title {
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px 4px 0 0;
+
+    margin: 0;
+    padding: .25em;
+  }
+
+  > .image {
+    display: block;
+
+    &.qfault {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+
+  > .download {
+    background-color: #FFF;
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid #CCC;
+    display: block;
+    padding: .25em;
+  }
+}

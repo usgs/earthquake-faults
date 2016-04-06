@@ -1,3 +1,12 @@
+'use strict';
+
+var FaultApp = require('FaultApp');
+
+
+FaultApp({
+  el: document.querySelector('.earthquake-faults-app')
+});
+
 // require.config({
 //   base: 'js',
 //   paths: {

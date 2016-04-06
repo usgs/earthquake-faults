@@ -1,48 +1,16 @@
-/*@import '../leaflet/leaflet.css';
+@import 'leaflet/control/_Control.scss';
+@import 'leaflet/control/_Attribution.scss';
+@import 'leaflet/control/_HazDevLayers.scss';
+@import 'leaflet/control/_MousePosition.scss';
+@import 'leaflet/control/_Scale.scss';
+@import 'leaflet/control/_Zoom.scss';
 
-* {
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-}
-html, body, #mapdiv {
-  display:block;
-  margin:0;padding:0;
-  height:100%;
-}
-.legend {
-  position:fixed;
-  top:10px;right:10px;
-  background-color:#666;
-  background-color:rgba(0,0,0,.5);
-  border-radius:5px;
-  padding:5px;
-  margin:0;
-}
-.legend > h2 {
-  margin:0;
-  padding:2px 0 0 5px;
-  font-size:.8em;
-  background-color:#FFF;
-  font-family:Arial;
-  border-radius:4px 4px 0 0;
-  border-bottom:1px solid #CCC;
-}
-.legend > img {
-  display:block;
-}
-.legend > img.qfault {
-  border-radius:4px 4px 0 0;
-}
-.legend > a {
-  display:block;
-  background-color:#FFF;
-  border-top:1px solid #CCC;
-  padding:2px 1px;
-  border-radius:0 0 4px 4px;
-  font-size:.8em;
-  text-align:center;
-}
+@import '_FaultApp.scss';
+@import 'layer/_HazardFault.scss';
+@import 'layer/_Legend.scss';
+
+
+/*
 .logo {
   display:block;
   position:fixed;
@@ -56,22 +24,7 @@ html, body, #mapdiv {
   outline:none;
   text-decoration:none;
 }
-.leaflet-control-scale {
-  background:#FFF;
-  box-shadow:0 1px 7px rgba(0,0,0,0.65);
-  border-radius:4px;
-  padding:5px;
-}
-.leaflet-control-scale > .leaflet-control-scale-line {
-  background:transparent;
-  box-shadow:none;
-}
-.leaflet-bottom > .leaflet-control-scale {
-  margin-bottom:15px;
-}
-.leaflet-left > .leaflet-control-scale {
-  margin-left:15px;
-}
+
 .area-info,
 .paleo-info {
   border-spacing:0;
@@ -100,45 +53,6 @@ html, body, #mapdiv {
 .leaflet-popup-scrolled {
   border-top:none;
   border-bottom:none;
-}
-
-.tabs-controls {
-  display:block;
-  float:left;
-  list-style:none;
-  margin:0 0 8px 0;
-  padding:0;
-  border-bottom:1px solid #666;
-  width:100%;
-}
-.tabs-control {
-  position:relative;
-  top:1px;
-  display:block;
-  float:left;
-  margin:0 2px;
-  padding:2px 4px;
-  border-width:1px;
-  border-style:solid;
-  border-color:#666;
-  border-radius:4px 4px 0 0;
-  cursor:pointer;
-  background-color:#F0F0F0;
-}
-.tabs-control-selected {
-  border-bottom-color:#FFF;
-  background-color:#FFF;
-}
-.tabs-contents {
-  clear:left;
-  max-height:150px;
-  overflow-y:auto;
-}
-.tabs-content {
-  display:none;
-}
-.tabs-content-visible {
-  display:block;
 }
 
 .faults-info {

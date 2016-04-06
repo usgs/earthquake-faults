@@ -26,10 +26,23 @@ var addExports = function (basedir, files) {
 
 // hazdev-webutils exports
 addExports('node_modules/hazdev-webutils/src', [
+  'mvc/View',
+  'util/Util'
+]);
+
+// hazdev-leaflet exports
+addExports('node_modules/hazdev-leaflet/src', [
+  'leaflet/layer/EsriTerrain',
+  'leaflet/layer/HazardFault',
+  'leaflet/control/HazDevLayers',
+  'leaflet/control/MousePosition'
 ]);
 
 // project exports
 addExports(config.src + '/htdocs/js', [
+  'FaultApp',
+  'layer/FaultLayer',
+  'layer/Legend'
 ]);
 
 // Subsequent source files can then require "Class" with:
@@ -42,6 +55,7 @@ var browerify = {
       debug: true,
       paths: [
         CWD + '/' + config.src + '/htdocs/js',
+        NODE_MODULES + '/hazdev-leaflet/src',
         NODE_MODULES + '/hazdev-webutils/src'
       ]
     }

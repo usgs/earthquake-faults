@@ -35,8 +35,10 @@ if (!Function.prototype.bind) {
 mocha.setup('bdd');
 
 // Add each test class here as they are implemented
-// require('./spec/package/Class');
-require('./spec/index');
+require('./spec/FaultAppTest');
+
+require('./spec/layer/FaultLayerTest');
+require('./spec/layer/LegendTest');
 
 
 if (window.mochaPhantomJS) {
