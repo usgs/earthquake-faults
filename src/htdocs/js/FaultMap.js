@@ -239,7 +239,7 @@ define([
 					'<dt class="clear fault-name-label">Name</td>',
 					'<dd class="fault-name-data">', info.NAME, '</dd>',
 
-					'<dt class="clear">Dip (degrees)</dt>',
+					'<dt class="clear">Dip</dt>',
 					'<dd>', info.DISP_DIPS + info.DIP_DIR, '</dd>',
 					'<dt>Pref Slip Rate (mm/yr)</dt>',
 					'<dd>', info.DISP_SING, '</dd>',
