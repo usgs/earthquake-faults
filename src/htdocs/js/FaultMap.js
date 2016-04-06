@@ -241,7 +241,7 @@ define([
 
 					'<dt class="clear">Dip</dt>',
 					'<dd>', info.DISP_DIPS + info.DIP_DIR, '</dd>',
-					'<dt>Pref Slip Rate (mm/yr)</dt>',
+					'<dt>Slip Rate (mm/yr)</dt>',
 					'<dd>', info.DISP_SING, '</dd>',
 					'<dt>Slip Sense</dt>',
 					'<dd>', slip_sense_map[info.SLIP_SENSE], '</dd>',
