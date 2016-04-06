@@ -76,7 +76,7 @@ define([
 
 					'<dt class="clear fault-strike-label">Strike</dt>',
 					'<dd class="fault-strike-data">', info.azimuth, '</dd>',
-					'<dt class="fault-direction-label">Direction</dt>',
+					'<dt class="fault-direction-label">Dip Direction</dt>',
 					'<dd class="fault-direction-data">', info.dipdirecti, '</dd>',
 					'<dt class="fault-length-label">Length (km)</dt>',
 					'<dd class="fault-length-data">',
