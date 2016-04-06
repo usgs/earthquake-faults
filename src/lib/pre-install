@@ -1,16 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-cd `dirname $0` 2>&1 > /dev/null;
+pushd `dirname $0` > /dev/null 2>&1;
 
-source '../conf/config.ini';
+PHP_BIN=`which php`;
 
-cat <<- EO_INSTALLER > ../conf/httpd.conf
-##----------------------------------------------------------------------
-## Application Name: Quaternary and Hazard Faults Web Applications
-## Description:
-##
-##----------------------------------------------------------------------
+if [ -z "$PHP_BIN" ]; then
+  read -p 'PHP executable not found, enter path to php: ' PHP_BIN;
+fi
 
-Alias $MOUNT_PATH `dirname $0`/../htdocs
+if [ -x "$PHP_BIN" ]; then
+  $PHP_BIN ./pre-install.php
+else
+  echo 'PHP executable not found, unable to run pre-install.php';
+  exit 1;
+fi
 
-EO_INSTALLER
+popd > /dev/null 2>&1;
+exit 0;
