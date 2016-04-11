@@ -43,7 +43,7 @@
     "grunt-postcss": "^0.7.0",
     "hazdev-leaflet": "usgs/hazdev-leaflet",
     "hazdev-tablist": "~0.1.0",
-    "hazdev-template": "usgs/hazdev-template",
+    "hazdev-template": "^0.2.4",
     "hazdev-webutils": "usgs/hazdev-webutils",
     "ini": "^1.2.1",
     "leaflet": "0.7.7",

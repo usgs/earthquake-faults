@@ -33,7 +33,7 @@ var FaultLayer = function (options) {
   options = Util.extend({}, _DEFAULTS, options);
   _this = L.layerGroup();
 
-  _initialize = function () {
+  _initialize = function (options) {
     _download = options.download;
     _legend = options.legend;
     _title = options.title;
@@ -73,6 +73,7 @@ var FaultLayer = function (options) {
   };
 
   _this.onRemove = function (/*map*/) {
+    this._map.closePopup();
     this.eachLayer(_this.removeLayerOrControl, _this);
     this._map = null;
   };

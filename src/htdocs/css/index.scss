@@ -5,8 +5,11 @@
 @import 'leaflet/control/_Scale.scss';
 @import 'leaflet/control/_Zoom.scss';
 
+@import 'tablist/TabList.scss';
+
 @import '_FaultApp.scss';
 @import 'layer/_HazardFault.scss';
+@import 'layer/_QFault.scss';
 @import 'layer/_Legend.scss';
 
 

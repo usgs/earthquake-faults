@@ -56,6 +56,7 @@ var browerify = {
       paths: [
         CWD + '/' + config.src + '/htdocs/js',
         NODE_MODULES + '/hazdev-leaflet/src',
+        NODE_MODULES + '/hazdev-tablist/src',
         NODE_MODULES + '/hazdev-webutils/src'
       ]
     }

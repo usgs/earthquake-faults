@@ -6,6 +6,7 @@ var EsriTerrain = require('leaflet/layer/EsriTerrain'),
     FaultLayer = require('layer/FaultLayer'),
     HazDevLayers = require('leaflet/control/HazDevLayers'),
     MousePosition = require('leaflet/control/MousePosition'),
+    QFaultLayer = require('layer/QFaultLayer'),
     Util = require('util/Util'),
     View = require('mvc/View');
 
@@ -25,6 +26,7 @@ var FaultApp = function (options) {
       _layersControl,
       _map,
       _positionControl,
+      _qFault,
       _scaleControl;
 
 
@@ -52,13 +54,29 @@ var FaultApp = function (options) {
       _map.addControl(_scaleControl);
     }
 
+    _qFault = QFaultLayer({
+      download: '/hazards/qfaults/qfaults.zip',
+      legend: 'images/qfault-legend.png',
+      services: {
+        'http://earthquake.usgs.gov/arcgis/rest/services/haz/qfaults': {
+          minZoom: 0,
+          maxZoom: 10
+        },
+        'http://earthquake.usgs.gov/arcgis/rest/services/haz/paleosites': {
+          minZoom: 8,
+          maxZoom: 10
+        }
+      },
+      title: 'Quaternary Faults (Age)'
+    });
+    _layersControl.addBaseLayer(_qFault, _qFault.getTitle());
+
     _hazFault2014 = FaultLayer({
       download: '/hazards/products/conterminous/2014/data/hazfaults2014.zip',
       legend: 'images/hazfault-legend-2014.png',
       title: '2014 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2014'
     });
-    _map.addLayer(_hazFault2014);
     _layersControl.addBaseLayer(_hazFault2014, _hazFault2014.getTitle());
 
     _hazFault2008 = FaultLayer({
@@ -76,6 +94,8 @@ var FaultApp = function (options) {
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2002'
     });
     _layersControl.addBaseLayer(_hazFault2002, _hazFault2002.getTitle());
+
+    _map.addLayer(_qFault);
   };
 
 
