@@ -242,12 +242,12 @@ var QFaultLayer = function (options) {
             attributes.cooperator || _UNSPECIFIED,
           '</dd>',
 
-          '<dt class="clear fault-age-label">Age</dt>',
+          '<dt class="clear fault-age-label">Age (yr)</dt>',
           '<dd class="fault-age-data">',
             attributes.age || _UNSPECIFIED,
           '</dd>',
 
-          '<dt class="fault-rate-label">Slip Rate</dt>',
+          '<dt class="fault-rate-label">Slip Rate (mm/yr)</dt>',
           '<dd class="fault-rate-data">',
             attributes.sliprate || _UNSPECIFIED,
           '</dd>',
@@ -259,7 +259,7 @@ var QFaultLayer = function (options) {
             attributes.slipsense || _UNSPECIFIED,
           '</dd>',
 
-          '<dt class="clear fault-strike-label">Strike</dt>',
+          '<dt class="clear fault-strike-label">Strike (degrees)</dt>',
           '<dd class="fault-strike-data">',
             attributes.azimuth || _UNSPECIFIED,
           '</dd>',
