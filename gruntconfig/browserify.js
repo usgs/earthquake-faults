@@ -41,9 +41,10 @@ addExports('node_modules/hazdev-leaflet/src', [
 // project exports
 addExports(config.src + '/htdocs/js', [
   'FaultApp',
+  'control/Legend',
   'control/Logo',
   'layer/FaultLayer',
-  'layer/Legend'
+  'layer/QFaultLayer'
 ]);
 
 // Subsequent source files can then require "Class" with:

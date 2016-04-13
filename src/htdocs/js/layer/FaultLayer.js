@@ -3,7 +3,7 @@
 
 
 var HazardFault = require('leaflet/layer/HazardFault'),
-    Legend = require('layer/Legend'),
+    Legend = require('control/Legend'),
     Util = require('util/Util');
 
 

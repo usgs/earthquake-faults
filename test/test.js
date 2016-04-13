@@ -37,8 +37,11 @@ mocha.setup('bdd');
 // Add each test class here as they are implemented
 require('./spec/FaultAppTest');
 
+require('./spec/control/LegendTest');
+require('./spec/control/LogoTest');
+
 require('./spec/layer/FaultLayerTest');
-require('./spec/layer/LegendTest');
+require('./spec/layer/QFaultLayerTest');
 
 
 if (window.mochaPhantomJS) {

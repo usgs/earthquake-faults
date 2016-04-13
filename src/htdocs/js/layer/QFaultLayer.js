@@ -3,7 +3,7 @@
 
 
 var ArcIdentify = require('leaflet/ArcIdentify'),
-    Legend = require('layer/Legend'),
+    Legend = require('control/Legend'),
     TabList = require('tablist/TabList'),
     Util = require('util/Util');
 

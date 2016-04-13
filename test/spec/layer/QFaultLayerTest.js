@@ -2,20 +2,20 @@
 'use strict';
 
 
-var Legend = require('layer/Legend');
+var QFaultLayer = require('layer/QFaultLayer');
 
 
 var expect = chai.expect;
 
 
-describe('Legend', function () {
+describe('QFaultLayer', function () {
   describe('constructor', function () {
     it('is defined', function () {
-      expect(typeof Legend).to.equal('function');
+      expect(typeof QFaultLayer).to.equal('function');
     });
 
     it('can be instantiated', function () {
-      expect(Legend).to.not.throw(Error);
+      expect(QFaultLayer).to.not.throw(Error);
     });
   });
 });
