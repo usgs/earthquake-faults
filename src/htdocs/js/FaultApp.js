@@ -11,9 +11,20 @@ var EsriTerrain = require('leaflet/layer/EsriTerrain'),
     View = require('mvc/View');
 
 
-var _DEFAULTS = {
+var _DEFAULTS,
+    _HAZFAULT_2002_LAYER,
+    _HAZFAULT_2008_LAYER,
+    _HAZFAULT_2014_LAYER,
+    _QFAULT_LAYER;
+
+_DEFAULTS = {
 
 };
+
+_HAZFAULT_2014_LAYER = 'HazFault2014';
+_HAZFAULT_2008_LAYER = 'HazFault2008';
+_HAZFAULT_2002_LAYER = 'HazFault2002';
+_QFAULT_LAYER = 'QFaults';
 
 
 var FaultApp = function (options) {
@@ -33,7 +44,7 @@ var FaultApp = function (options) {
   options = Util.extend({}, _DEFAULTS, options);
   _this = View(options);
 
-  _initialize = function (/*options*/) {
+  _initialize = function (options) {
     _map = L.map(_this.el, {
       center: [37.3, -95],
       layers:  [EsriTerrain()],
@@ -95,7 +106,72 @@ var FaultApp = function (options) {
     });
     _layersControl.addBaseLayer(_hazFault2002, _hazFault2002.getTitle());
 
-    _map.addLayer(_qFault);
+    _this.setActiveLayer(options.layer);
+
+    _map.on('layeradd', _this.onLayerAdd, _this);
+  };
+
+
+  _this.destroy = Util.compose(function () {
+    _map.remove(); // Destroy map and unbind all event listeners
+
+    _hazFault2002 = null;
+    _hazFault2008 = null;
+    _hazFault2014 = null;
+    _layersControl = null;
+    _map = null;
+    _positionControl = null;
+    _qFault = null;
+    _scaleControl = null;
+
+    _initialize = null;
+    _this = null;
+  }, _this.destroy);
+
+  _this.onLayerAdd = function (evt) {
+    var layer;
+
+    layer = evt.layer;
+
+    if (layer === _qFault) {
+      _this.setHash(_QFAULT_LAYER);
+    } else if (layer === _hazFault2014) {
+      _this.setHash(_HAZFAULT_2014_LAYER);
+    } else if (layer === _hazFault2008) {
+      _this.setHash(_HAZFAULT_2008_LAYER);
+    } else if (layer === _hazFault2002) {
+      _this.setHash(_HAZFAULT_2002_LAYER);
+    }
+  };
+
+  _this.setActiveLayer = function (layerName) {
+    // Remove all layers
+    if (_map.hasLayer(_qFault)) { _map.removeLayer(_qFault); }
+    if (_map.hasLayer(_hazFault2014)) { _map.removeLayer(_hazFault2014); }
+    if (_map.hasLayer(_hazFault2008)) { _map.removeLayer(_hazFault2008); }
+    if (_map.hasLayer(_hazFault2002)) { _map.removeLayer(_hazFault2002); }
+
+    // Add layer that is active
+    if (layerName === _QFAULT_LAYER) {
+      _map.addLayer(_qFault);
+    } else if (layerName === _HAZFAULT_2014_LAYER) {
+      _map.addLayer(_hazFault2014);
+    } else if (layerName === _HAZFAULT_2008_LAYER) {
+      _map.addLayer(_hazFault2008);
+    } else if (layerName === _HAZFAULT_2002_LAYER) {
+      _map.addLayer(_hazFault2002);
+    }
+  };
+
+  _this.setHash = function (hash) {
+    try {
+      // better to replace since not listening for hash change events, thus
+      // a "back" button click that changes the hash but does not update the
+      // interface can lead to inconsistent display
+      window.location.replace('#' + hash);
+    } catch (e) {
+      window.location.hash = hash;
+    }
   };
 
 
@@ -103,6 +179,12 @@ var FaultApp = function (options) {
   options = null;
   return _this;
 };
+
+
+FaultApp.HAZFAULT_2002_LAYER = _HAZFAULT_2002_LAYER;
+FaultApp.HAZFAULT_2008_LAYER = _HAZFAULT_2008_LAYER;
+FaultApp.HAZFAULT_2014_LAYER = _HAZFAULT_2014_LAYER;
+FaultApp.QFAULT_LAYER = _QFAULT_LAYER;
 
 
 module.exports = FaultApp;
