@@ -38,7 +38,8 @@ var FaultApp = function (options) {
       _map,
       _positionControl,
       _qFault,
-      _scaleControl;
+      _scaleControl,
+      _zoomControl;
 
 
   options = Util.extend({}, _DEFAULTS, options);
@@ -51,8 +52,12 @@ var FaultApp = function (options) {
       maxZoom: 11,
       minZoom: 1,
       zoom: 3,
-      zoomAnimation: true
+      zoomAnimation: true,
+      zoomControl: false
     });
+
+    _zoomControl = L.control.zoom();
+    _map.addControl(_zoomControl);
 
     _layersControl = HazDevLayers();
     _map.addControl(_layersControl);
@@ -106,9 +111,9 @@ var FaultApp = function (options) {
     });
     _layersControl.addBaseLayer(_hazFault2002, _hazFault2002.getTitle());
 
-    _this.setActiveLayer(options.layer);
-
+    _map.on('zoomend', function () { console.log(_map.getMaxZoom()); });
     _map.on('layeradd', _this.onLayerAdd, _this);
+    _this.setActiveLayer(options.layer);
   };
 
 
@@ -123,6 +128,7 @@ var FaultApp = function (options) {
     _positionControl = null;
     _qFault = null;
     _scaleControl = null;
+    _zoomControl = null;
 
     _initialize = null;
     _this = null;
@@ -135,13 +141,23 @@ var FaultApp = function (options) {
 
     if (layer === _qFault) {
       _this.setHash(_QFAULT_LAYER);
+
+      if (_map.getZoom() > 10) {
+        _map.setZoom(10);
+      }
+      _map.options.maxZoom = 10;
     } else if (layer === _hazFault2014) {
       _this.setHash(_HAZFAULT_2014_LAYER);
+      _map.options.maxZoom = 11;
     } else if (layer === _hazFault2008) {
       _this.setHash(_HAZFAULT_2008_LAYER);
+      _map.options.maxZoom = 11;
     } else if (layer === _hazFault2002) {
       _this.setHash(_HAZFAULT_2002_LAYER);
+      _map.options.maxZoom = 11;
     }
+
+    _zoomControl._updateDisabled();
   };
 
   _this.setActiveLayer = function (layerName) {
