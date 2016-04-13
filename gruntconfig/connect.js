@@ -13,13 +13,7 @@ var addMiddleware = function (connect, options, middlewares) {
       }
     }),
     require('grunt-connect-rewrite/lib/utils').rewriteRequest,
-    require('grunt-connect-proxy/lib/utils').proxyRequest//,
-    // require('gateway')(options.base[0], {
-    //   '.php': 'php-cgi',
-    //   'env': {
-    //     'PHPRC': 'node_modules/hazdev-template/dist/conf/php.ini'
-    //   }
-    // })
+    require('grunt-connect-proxy/lib/utils').proxyRequest
   );
   return middlewares;
 };
@@ -57,8 +51,7 @@ var connect = {
       ],
       livereload: config.liveReloadPort,
       middleware: addMiddleware,
-      open: 'http://localhost:' + config.buildPort + config.ini.MOUNT_PATH +
-          '/index.html',
+      open: 'http://localhost:' + config.buildPort + config.ini.MOUNT_PATH + '/',
       port: config.buildPort
     }
   },
@@ -70,8 +63,7 @@ var connect = {
       ],
       keepalive: true,
       middleware: addMiddleware,
-      open: 'http://localhost:' + config.distPort + config.ini.MOUNT_PATH +
-          '/index.html',
+      open: 'http://localhost:' + config.distPort + config.ini.MOUNT_PATH + '/',
       port: config.distPort
     }
   },
@@ -81,7 +73,6 @@ var connect = {
       base: [
         'node_modules/hazdev-template/dist/htdocs'
       ],
-      // middleware: addMiddleware,
       port: config.templatePort
     }
   },

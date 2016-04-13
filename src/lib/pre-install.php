@@ -51,6 +51,16 @@ file_put_contents($HTTPD_CONF, '
 
   Alias ' . $CONFIG['MOUNT_PATH'] . ' ' . $HTDOCS_DIR . '
 
+  RewriteEngine On
+
+  # Migration assistance rewrites, can be removed at some point in the future
+  RewriteRule ^'. $CONFIG['MOUNT_PATH'] .'/hazfault2014.html$ ' .
+      $CONFIG['MOUNT_PATH'] . '/#hazfaults2014 [NE,L,R=301]
+  RewriteRule ^'. $CONFIG['MOUNT_PATH'] .'/hazfault2008.html$ ' .
+      $CONFIG['MOUNT_PATH'] . '/#hazfaults2008 [NE,L,R=301]
+  RewriteRule ^'. $CONFIG['MOUNT_PATH'] .'/hazfault2002.html$ ' .
+      $CONFIG['MOUNT_PATH'] . '/#hazfaults2002 [NE,L,R=301]
+
   <Location ' . $CONFIG['MOUNT_PATH'] . '>
     Order allow,deny
     Allow from all
