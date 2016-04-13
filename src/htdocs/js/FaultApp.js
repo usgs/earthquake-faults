@@ -5,6 +5,7 @@
 var EsriTerrain = require('leaflet/layer/EsriTerrain'),
     FaultLayer = require('layer/FaultLayer'),
     HazDevLayers = require('leaflet/control/HazDevLayers'),
+    Logo = require('control/Logo'),
     MousePosition = require('leaflet/control/MousePosition'),
     QFaultLayer = require('layer/QFaultLayer'),
     Util = require('util/Util'),
@@ -61,6 +62,8 @@ var FaultApp = function (options) {
 
     _layersControl = HazDevLayers();
     _map.addControl(_layersControl);
+
+    _map.addControl(Logo());
 
     if (!Util.isMobile()) {
       _positionControl = MousePosition();

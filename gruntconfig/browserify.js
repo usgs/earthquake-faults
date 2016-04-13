@@ -41,6 +41,7 @@ addExports('node_modules/hazdev-leaflet/src', [
 // project exports
 addExports(config.src + '/htdocs/js', [
   'FaultApp',
+  'control/Logo',
   'layer/FaultLayer',
   'layer/Legend'
 ]);
