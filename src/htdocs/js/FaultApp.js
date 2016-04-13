@@ -86,7 +86,7 @@ var FaultApp = function (options) {
           maxZoom: 10
         }
       },
-      title: 'Quaternary Faults (Age)'
+      title: 'Quaternary Faults'
     });
     _layersControl.addBaseLayer(_qFault, _qFault.getTitle());
 

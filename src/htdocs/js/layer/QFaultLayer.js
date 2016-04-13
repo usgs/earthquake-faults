@@ -22,7 +22,7 @@ _DEFAULTS = {
     '/argis/rest/services/paleo': {},
   },
 
-  title: 'Quaternary Faults (Age)',
+  title: 'Quaternary Faults',
 };
 
 _UNSPECIFIED = '<span class="unknown">unspecified</span>';
