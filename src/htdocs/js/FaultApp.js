@@ -21,10 +21,10 @@ _DEFAULTS = {
 
 };
 
-_HAZFAULT_2014_LAYER = 'HazFault2014';
-_HAZFAULT_2008_LAYER = 'HazFault2008';
-_HAZFAULT_2002_LAYER = 'HazFault2002';
-_QFAULT_LAYER = 'QFaults';
+_HAZFAULT_2014_LAYER = 'hazfaults2014';
+_HAZFAULT_2008_LAYER = 'hazfaults2008';
+_HAZFAULT_2002_LAYER = 'hazfaults2002';
+_QFAULT_LAYER = 'qfaults';
 
 
 var FaultApp = function (options) {
