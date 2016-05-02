@@ -1,3 +1,9 @@
+v0.1.0 - Web Services (2016-04-07)
+==================================
+ * Updated to use new web service URLs for data.
+ * Updated some labeling.
+ * Merged maps to single interface with layer chooser.
+
 v0.0.5 - Default Extent (2014-09-03)
 ====================================
  * Made initial extent a configurable option.

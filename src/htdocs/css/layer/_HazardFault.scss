@@ -1,0 +1,33 @@
+.hazard-fault-layer-popup {
+  max-height: 125px;
+  min-width: 200px;
+  overflow-y: auto;
+}
+
+.fault-result {
+  display: block;
+
+  + .fault-result {
+    border-top: 1px solid #999;
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+
+  > dl {
+    margin: 0.25em 0 0;
+
+    > dt {
+      clear: left;
+      float: left;
+      margin-right: 1em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 10em;
+    }
+    > dd {
+      white-space: nowrap;
+      width: 20em;
+    }
+  }
+}

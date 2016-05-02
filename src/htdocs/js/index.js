@@ -1,32 +1,18 @@
-require.config({
-	base: 'js',
-	paths: {
-		leaflet: '../leaflet/leaflet-src'
-	},
-	shim: {
-		leaflet: {
-			exports: 'L'
-		}
-	}
-});
+'use strict';
 
-require([
-	'QFaultMap'
-], function (
-	QFaultMap
-) {
-	'use strict';
+var FaultApp = require('FaultApp');
 
-	var GEO = 'http://geohazards.usgs.gov/ArcGIS/rest/services';
 
-	new QFaultMap({
-		faultLayerUrl: GEO + '/qfaults2013/MapServer/tile/{z}/{y}/{x}',
-		faultLayerOpts: {
-			attribution: '<a href="/hazards/qfaults/">USGS</a>'
-		},
-		faultInfoUrl: GEO + '/qfaults2013/MapServer/identify',
+var defaultLayer;
 
-		paleoLayerUrl: GEO + '/paleosites2013/MapServer/tile/{z}/{y}/{x}',
-		paleoInfoUrl: GEO + '/paleosites2013/MapServer/identify'
-	});
+
+if (window.location.hash) {
+  defaultLayer = window.location.hash.replace('#', '');
+} else {
+  defaultLayer = FaultApp.QFAULT_LAYER;
+}
+
+FaultApp({
+  el: document.querySelector('.earthquake-faults-app'),
+  layer: defaultLayer
 });
