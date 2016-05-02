@@ -4,7 +4,8 @@
 
 var EsriTerrain = require('leaflet/layer/EsriTerrain'),
     FaultLayer = require('layer/FaultLayer'),
-    HazDevLayers = require('leaflet/control/HazDevLayers'),
+    // HazDevLayers = require('leaflet/control/HazDevLayers'),
+    QFaultLayers = require('control/QFaultLayers'),
     Logo = require('control/Logo'),
     MousePosition = require('leaflet/control/MousePosition'),
     QFaultLayer = require('layer/QFaultLayer'),
@@ -60,7 +61,7 @@ var FaultApp = function (options) {
     _zoomControl = L.control.zoom();
     _map.addControl(_zoomControl);
 
-    _layersControl = HazDevLayers();
+    _layersControl = QFaultLayers();
     _map.addControl(_layersControl);
 
     _map.addControl(Logo());
@@ -88,7 +89,7 @@ var FaultApp = function (options) {
       },
       title: 'Quaternary Faults'
     });
-    _layersControl.addBaseLayer(_qFault, _qFault.getTitle());
+    _layersControl.addQFault(_qFault, _qFault.getTitle());
 
     _hazFault2014 = FaultLayer({
       download: '/hazards/products/conterminous/2014/data/hazfaults2014.zip',
@@ -96,7 +97,7 @@ var FaultApp = function (options) {
       title: '2014 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2014'
     });
-    _layersControl.addBaseLayer(_hazFault2014, _hazFault2014.getTitle());
+    _layersControl.addHazFault(_hazFault2014, _hazFault2014.getTitle());
 
     _hazFault2008 = FaultLayer({
       download: '/hazards/products/conterminous/2008/data/hazfaults2008.zip',
@@ -104,7 +105,7 @@ var FaultApp = function (options) {
       title: '2008 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2008'
     });
-    _layersControl.addBaseLayer(_hazFault2008, _hazFault2008.getTitle());
+    _layersControl.addHazFault(_hazFault2008, _hazFault2008.getTitle());
 
     _hazFault2002 = FaultLayer({
       download: '/hazards/products/conterminous/2002/data/hazfaults2002.zip',
@@ -112,7 +113,7 @@ var FaultApp = function (options) {
       title: '2002 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2002'
     });
-    _layersControl.addBaseLayer(_hazFault2002, _hazFault2002.getTitle());
+    _layersControl.addHazFault(_hazFault2002, _hazFault2002.getTitle());
 
     _map.on('zoomend', function () { console.log(_map.getMaxZoom()); });
     _map.on('layeradd', _this.onLayerAdd, _this);
