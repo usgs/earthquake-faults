@@ -75,7 +75,7 @@ var FaultApp = function (options) {
     }
 
     _qFault = QFaultLayer({
-      download: '/hazards/qfaults/qfaults.zip',
+      download: 'ftp://hazards.cr.usgs.gov/web/nshm/qfaults/qfaults-GIS.zip',
       legend: 'images/qfault-legend.png',
       services: {
         'http://earthquake.usgs.gov/arcgis/rest/services/haz/qfaults': {
@@ -92,7 +92,8 @@ var FaultApp = function (options) {
     _layersControl.addQFault(_qFault, _qFault.getTitle());
 
     _hazFault2014 = FaultLayer({
-      download: '/hazards/products/conterminous/2014/data/hazfaults2014.zip',
+      download: 'ftp://hazards.cr.usgs.gov/web/nshm/conterminous/' +
+          '2014/data/hazfaults2014.zip',
       legend: 'images/hazfault-legend-2014.png',
       title: '2014 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2014'
@@ -100,7 +101,8 @@ var FaultApp = function (options) {
     _layersControl.addHazFault(_hazFault2014, _hazFault2014.getTitle());
 
     _hazFault2008 = FaultLayer({
-      download: '/hazards/products/conterminous/2008/data/hazfaults2008.zip',
+      download: 'ftp://hazards.cr.usgs.gov/web/nshm/conterminous/' +
+          '2008/data/hazfaults2008.zip',
       legend: 'images/hazfault-legend.png',
       title: '2008 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2008'
@@ -108,7 +110,8 @@ var FaultApp = function (options) {
     _layersControl.addHazFault(_hazFault2008, _hazFault2008.getTitle());
 
     _hazFault2002 = FaultLayer({
-      download: '/hazards/products/conterminous/2002/data/hazfaults2002.zip',
+      download: 'ftp://hazards.cr.usgs.gov/web/nshm/conterminous/' +
+          '2002/data/hazfaults2002.zip',
       legend: 'images/hazfault-legend.png',
       title: '2002 Fault Sources',
       url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2002'
