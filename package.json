@@ -1,6 +1,6 @@
 {
   "name": "earthquake-faults",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Earthquake Faults Web Application",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-mocha-phantomjs": "3.0.0",
     "grunt-postcss": "^0.7.0",
-    "hazdev-leaflet": "usgs/hazdev-leaflet",
+    "hazdev-leaflet": "0.1.2",
     "hazdev-tablist": "~0.1.0",
     "hazdev-template": "^0.2.4",
     "hazdev-webutils": "usgs/hazdev-webutils",
