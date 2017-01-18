@@ -11,4 +11,4 @@ source-like) licenses/agreements. Appropriate license aggrements for each
 Libraries used at runtime
 -------------------------
 
- - Leaflet (http://leafletjs.com/)
+ - Leaflet (https://leafletjs.com/)
