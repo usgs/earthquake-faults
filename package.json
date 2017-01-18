@@ -16,7 +16,7 @@
   "scripts": {
     "test": "grunt test"
   },
-  "author": "Eric Martinez <emartinez@usgs.gov> (http://earthquake.usgs.gov/)",
+  "author": "Eric Martinez <emartinez@usgs.gov> (https://earthquake.usgs.gov/)",
   "homepage": "https://earthquake.usgs.gov/hazards/qfaults/map/",
   "bugs": {
     "url": "https://github.com/usgs/earthquake-faults/issues"
