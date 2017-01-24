@@ -2,7 +2,7 @@
 'use strict';
 
 
-var EsriTerrain = require('leaflet/layer/EsriTerrain'),
+var Terrain = require('leaflet/layer/Terrain'),
     FaultLayer = require('layer/FaultLayer'),
     // HazDevLayers = require('leaflet/control/HazDevLayers'),
     QFaultLayers = require('control/QFaultLayers'),
@@ -50,7 +50,7 @@ var FaultApp = function (options) {
   _initialize = function (options) {
     _map = L.map(_this.el, {
       center: [37.3, -95],
-      layers:  [EsriTerrain()],
+      layers:  [Terrain({provider: Terrain.NATGEO})],
       maxZoom: 11,
       minZoom: 1,
       zoom: 3,

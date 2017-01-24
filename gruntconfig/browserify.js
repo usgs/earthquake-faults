@@ -32,7 +32,7 @@ addExports('node_modules/hazdev-webutils/src', [
 
 // hazdev-leaflet exports
 addExports('node_modules/hazdev-leaflet/src', [
-  'leaflet/layer/EsriTerrain',
+  'leaflet/layer/Terrain',
   'leaflet/layer/HazardFault',
   'leaflet/control/HazDevLayers',
   'leaflet/control/MousePosition'
