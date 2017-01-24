@@ -78,11 +78,11 @@ var FaultApp = function (options) {
       download: 'ftp://hazards.cr.usgs.gov/web/nshm/qfaults/qfaults-GIS.zip',
       legend: 'images/qfault-legend.png',
       services: {
-        'http://earthquake.usgs.gov/arcgis/rest/services/haz/qfaults': {
+        'https://earthquake.usgs.gov/arcgis/rest/services/haz/qfaults': {
           minZoom: 0,
           maxZoom: 10
         },
-        'http://earthquake.usgs.gov/arcgis/rest/services/haz/paleosites': {
+        'https://earthquake.usgs.gov/arcgis/rest/services/haz/paleosites': {
           minZoom: 8,
           maxZoom: 10
         }
@@ -96,7 +96,7 @@ var FaultApp = function (options) {
           '2014/data/hazfaults2014.zip',
       legend: 'images/hazfault-legend-2014.png',
       title: '2014 Fault Sources',
-      url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2014'
+      url: 'https://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2014'
     });
     _layersControl.addHazFault(_hazFault2014, _hazFault2014.getTitle());
 
@@ -105,7 +105,7 @@ var FaultApp = function (options) {
           '2008/data/hazfaults2008.zip',
       legend: 'images/hazfault-legend.png',
       title: '2008 Fault Sources',
-      url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2008'
+      url: 'https://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2008'
     });
     _layersControl.addHazFault(_hazFault2008, _hazFault2008.getTitle());
 
@@ -114,7 +114,7 @@ var FaultApp = function (options) {
           '2002/data/hazfaults2002.zip',
       legend: 'images/hazfault-legend.png',
       title: '2002 Fault Sources',
-      url: 'http://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2002'
+      url: 'https://earthquake.usgs.gov/arcgis/rest/services/haz/hazfaults2002'
     });
     _layersControl.addHazFault(_hazFault2002, _hazFault2002.getTitle());
 
