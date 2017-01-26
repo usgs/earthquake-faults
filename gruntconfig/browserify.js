@@ -30,14 +30,6 @@ addExports('node_modules/hazdev-webutils/src', [
   'util/Util'
 ]);
 
-// hazdev-leaflet exports
-addExports('node_modules/hazdev-leaflet/src', [
-  'leaflet/layer/EsriTerrain',
-  'leaflet/layer/HazardFault',
-  'leaflet/control/HazDevLayers',
-  'leaflet/control/MousePosition'
-]);
-
 // project exports
 addExports(config.src + '/htdocs/js', [
   'FaultApp',
