@@ -29,7 +29,11 @@ var postcss = {
         }),
         precss(),
         calc(),
-        autoprefixer({'browsers': 'last 3 versions'})
+        autoprefixer({
+          'browsers': [
+            'last 3 versions'
+          ]
+        })
       ]
     },
     expand: true,
